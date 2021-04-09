@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "This is to automated Daraz functionalities",
   "main": "index.js","scripts": {
-    "test": "cypress open" 
+    "test": "cypress open",
+    "start": "cypress run --browser chrome" 
   },
   "author": "Karishma",
   "license": "ISC",

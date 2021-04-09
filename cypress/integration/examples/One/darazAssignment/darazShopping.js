@@ -53,13 +53,15 @@ describe("darazAssignment", () => {
     cy.get(
       '[data-item-id="105052494"] > .c3e8SH > .c5TXIP > .c2iYAv > .cRjKsc > a > .c1ZEkM'
     ).click();
-    cy.url().should("eq","https://www.daraz.com.np/products/samsung-galaxy-m02s-65-hd-display-with-5000-mah-battery-i105052494-s1026726988.html?spm=a2a0e.searchlist.list.1.4dd5a157LwDRuO&search=1")
-    cy.get(".pdp-button_theme_orange > .pdp-button-text > span").click();
+    // cy.url().should("eq","https://www.daraz.com.np/products/samsung-galaxy-m02s-65-hd-display-with-5000-mah-battery-i105052494-s1026726988.html?spm=a2a0e.searchlist.list.1.4dd5a157LwDRuO&search=1")
+    cy.wait(3000);
+    cy.get(".pdp-button_theme_orange > .pdp-button-text > span").scrollIntoView().should('be.visible').click();
     });
    it("Go to cart and remove from cart", () => {
+    cy.wait(6000);
       cy.visit("https://cart.daraz.com.np/cart");
       cy.wait(6000);
-      cy.get(".checkbox-wrap > .next-checkbox > input").click();
+      cy.get(".checkbox-wrap > .next-checkbox > input").scrollIntoView().should('be.visible').click();
       cy.wait(6000);
       cy.get(".btn-wrap > .lazada").click();
       cy.wait(6000);
